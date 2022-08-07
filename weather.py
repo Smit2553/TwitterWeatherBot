@@ -15,5 +15,4 @@ def get_weather_data(city=None):
     return response
 
 
-def process_weather_data():
-    pass
+
