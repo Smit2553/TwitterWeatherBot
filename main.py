@@ -1,19 +1,11 @@
 import requests
 from dotenv import load_dotenv
 import os
-from city import *
-
-load_dotenv()
+from weather import *
 
 
-def get_weather_data(city=None):
-    if city is None:
-        city = get_city()
-
-    weatherapikey = os.environ.get("WEATHERAPI")
-    response = requests.get(f'http://api.openweathermap.org/data/2.5/weather?q={city[0]}&APPID={weatherapikey}').json()
-    return response
-
-
-def process_weather_data():
-    pass
+def twitterpost(data=get_weather_data()):
+    temperature_k = data['main']['temp']
+    temperature_c = temperature_k - 273.15
+    temperature_f = 1.8 * (temperature_k - 273) + 32
+    general_weather = data['weather'][0]['description']
