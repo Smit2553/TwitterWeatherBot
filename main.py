@@ -25,7 +25,7 @@ def twitterpost():
     Celcius = {temperature_c} C
     Fahrenheit = {temperature_f} F
     Conditions = {general_weather}
-    https://www.google.com/maps/search/?api=1&query={googlemapslink}  #weather #city #{city[0]}""")
+    https://www.google.com/maps/search/?api=1&query={googlemapslink}  #weather #city #{city[0].replace(" ", 0)}""")
     print(f'Location = {city[0]}, {city[1]}')
 
 
