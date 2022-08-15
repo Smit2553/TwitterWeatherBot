@@ -29,6 +29,13 @@ def twitterpost():
     print(f'Location = {city[0]}, {city[1]}')
 
 
+def main():
+    try:
+        twitterpost()
+    except:
+        twitterpost()
+
+
 while True:
-    twitterpost()
+    main()
     time.sleep(3600)
